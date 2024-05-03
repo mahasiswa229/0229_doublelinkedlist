@@ -22,7 +22,7 @@ void addNode()
     
     if (START == NULL || newNode->noMhs <= START -> noMhs)
 {
-    if (START == NULL || newNode->noMhs <= START -> noMhs)
+    if (START == NULL && newNode->noMhs == START -> noMhs)
     {
         cout << "\033[31mDuplicate roll numbers not allowed\033[0m" << endl;
         return;
@@ -124,7 +124,7 @@ void deleteNode()
 
 bool listEmpty()
 {
-    return(START == NULL)
+    return(START == NULL);
 }
 
 void traverse()
@@ -163,13 +163,13 @@ void revtraverse()
 
 void searchData()
 {
-    if(listempty() == true)
+    if(listEmpty() == true)
     {
         cout << "\nList is empty." << endl;
     }
     Node *prev, *curr;
     prev = curr = NULL;
-    cout << "\nEnter the roll number of the student whose record is to be search: "
+    cout << "\nEnter the roll number of the student whose record is to be search: ";
     int num;
     cin >> num;
     if(search(num, &prev, &curr) == false)
@@ -178,7 +178,7 @@ void searchData()
     {
         cout << "\nRecord found" << endl;
         cout << "\nRoll number: " << curr->noMhs << endl;
-        cout << "\nName: " << curr->nama << endl;
+        cout << "\nName: " << curr->name << endl;
     }
 }
 int main()
@@ -194,9 +194,9 @@ int main()
             cout << "4. View all records in the descending order of rol numbers" << endl;
             cout << "5. Search for a record in the list" << endl;
             cout << "6. Exit" << endl;
-            cout << "\nEnter your choice(1-6): "
+            cout << "\nEnter your choice(1-6): ";
             char ch;
-            cin ch;
+            cin >> ch;
 
             switch(ch)
             {
