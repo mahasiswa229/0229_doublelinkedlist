@@ -119,7 +119,12 @@ void deleteNode()
         }
     }
     delete current;
-    cout << "\x1b[32mRecord with roll number" << rollNo << "deleted\x1b[0m" endl;
+    cout << "\x1b[32mRecord with roll number" << rollNo << "deleted\x1b[0m" << endl;
+}
+
+bool listEmpty()
+{
+    return(START == NULL)
 }
 
 void traverse()
@@ -132,7 +137,7 @@ void traverse()
         Node *currentNode = START;
         while (currentNode != NULL)
         {
-            cout << currentNode->noMhs << "" << currentNode->nama <<endl;
+            cout << currentNode->noMhs << "" << currentNode->name <<endl;
             currentNode = currentNode->next;
         }
     }
@@ -150,7 +155,7 @@ void revtraverse()
             currentNode = currentNode->next;
         while (currentNode != NULL)
         {
-            cout << currentNode->noMhs << "" << currentNode->nama <<endl;
+            cout << currentNode->noMhs << "" << currentNode->name <<endl;
             currentNode = currentNode->prev;
         }
     }
@@ -221,6 +226,10 @@ int main()
                 cout << "\nInvalid option" << endl;
                 break;
             }
+        }
+        catch(exception &e)
+        {
+            cout << "Check for the values entered" << endl;
         }
     }
 }
