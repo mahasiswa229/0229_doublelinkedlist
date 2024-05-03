@@ -24,7 +24,7 @@ void addNode()
 {
     if (START == NULL || newNode->noMhs <= START -> noMhs)
     {
-        cout << "\033[31mDuplicate roll numbers not allowed\033[0m"
+        cout << "\033[31mDuplicate roll numbers not allowed\033[0m" << endl;
         return;
     }
     
@@ -33,11 +33,34 @@ void addNode()
     {
         START->prev = newNode;
     }
-    newNode-> prev = NULL;
+    newNode->prev = NULL;
     START = newNode;
 }
     else
-    {
+{
+    Node *current = START;
+    Node *previous = START;
 
+    while(current != NULL && current->noMhs < newNode->noMhs)
+    {
+        previous = current;
+        current = current->next;
     }
+    if(current != NULL)
+    {
+        current->prev = newNode;
+    }
+
+    if(previous != NULL)
+    {
+        previous->next = newNode;
+    }
+    else
+    {
+        START = newNode;
+    }
+}
 }; 
+
+int main()
+{}
