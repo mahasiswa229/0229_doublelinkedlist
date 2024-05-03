@@ -60,7 +60,12 @@ void addNode()
         START = newNode;
     }
 }
-}; 
+};
+
+bool search(int rollNo, Node **previous, Node **current)
+{
+    
+}
 
 int main()
 {}
